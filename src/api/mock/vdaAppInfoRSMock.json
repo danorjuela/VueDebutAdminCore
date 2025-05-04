@@ -1,0 +1,51 @@
+{
+  "common":{
+    "appName": "Vue Debut Admin",
+    "description" : "", 
+    "msalCliendId": "",
+    "gCliendId": ""
+  }, 
+  "themeColor":{
+    "colorShemaLigth" : {
+      "light":"#f2e7cc",
+      "dark":"#011b35",
+      "primary":"#643408",
+      "secondary":"#a2612d",
+      "info":"#f38a39",
+      "accent1":"#1f2542",
+      "accent2":"#fb3c50",
+      "accent3":"#0c8ffe",
+      "success":"#519e03",
+      "warning":"#ffbd4f",
+      "danger":"#ef0160"
+    },
+    "colorShemaDark" : {
+      "light":"#f2e7cc",
+      "dark":"#011b35",
+      "primary":"#643408",
+      "secondary":"#a2612d",
+      "info":"#f38a39",
+      "accent1":"#1f2542",
+      "accent2":"#fb3c50",
+      "accent3":"#0c8ffe",
+      "success":"#519e03",
+      "warning":"#ffbd4f",
+      "danger":"#ef0160"
+    }
+  },
+  "user":{
+    "name":"",
+    "email":"",
+    "permisions":[
+      "", "", ""
+    ],
+    "rols":[
+      "", "", ""
+    ],
+    "sidebar":[
+      {"name":"dashboard", "icon":"", "color":""},
+      {"name":"campaign", "icon":"", "color":""}
+    ],
+    "sidebarAdmin": {"name":"dashboard", "icon":"", "color":""}
+  }
+}

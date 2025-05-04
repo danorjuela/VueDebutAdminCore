@@ -1,30 +1,27 @@
 <template>
-  <nav class="navbar topbar mb-2 static-top .navbar-expand-md">
-    <span class="navbar-toggler-icon mx-3"></span>
-
-    <a class="navbar-brand mx-auto" href="#">DashBoard</a>
-
-    <span class="bi bi-brightness-high-fill mx-3"></span>
-    <div class="vr"></div>
-    <span class="ms-3">Daniel Orjuela</span>
-    <span class=" mx-3 bi bi-layout-wtf"></span>
-
-  </nav>
+    <span @click="changeVdaThemeMode" :class="{'bi mx-3' : true, 'bi-brightness-high-fill':vdaThemeMode =='ligth', 
+      'bi-moon-stars-fill':vdaThemeMode =='dark', 'bi bi-brilliance':vdaThemeMode =='auto'
+    } "></span>
 </template>
 
 <script setup>
-import vdaBreadCum from '@/layout/vdaDashboard/vdaBreadCum.vue'
+  import { ref, computed } from 'vue';
+  import { ThemeModeMonitor} from '@/utils/ThemeModeMonitor'
+  import {useVdaDashboardStore} from '@/stores/vdaDashboardStore.ts'
+  import { ThemeModeComposable } from '@/utils/ThemeModeComposable.ts'
+  const {setThemeBasedOnSystemPreference} = ThemeModeComposable();
+  const vdaDashboardStore = useVdaDashboardStore();
+  const vdaThemeMode = computed(() => vdaDashboardStore.vdaThemeMode);
+
+  const changeVdaThemeMode = () => {
+    if (vdaThemeMode.value === 'auto'){
+      vdaDashboardStore.ChangeViewMode('ligth')
+    }else if (vdaThemeMode.value === 'ligth'){
+      vdaDashboardStore.ChangeViewMode('dark')
+    }else if (vdaThemeMode.value === 'dark'){
+      vdaDashboardStore.ChangeViewMode('auto')
+    }
+    setThemeBasedOnSystemPreference()
+  };
 </script>
 
-<style lang="scss" scoped>
-  @media (prefers-color-scheme: light) {
-    nav {
-      border-bottom:  var(--bs-border-width) solid var(--bs-gray-400);
-    }
-  }
-  @media (prefers-color-scheme: dark) {
-    nav {
-      border-bottom: var(--bs-border-width) solid var(--bs-gray-dark);
-    }
-  }
-</style>

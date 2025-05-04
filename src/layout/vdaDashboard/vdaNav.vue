@@ -4,7 +4,7 @@
 
     <a class="navbar-brand mx-auto" href="#">DashBoard</a>
 
-    <span class="bi bi-brightness-high-fill mx-3"></span>
+    <vda-nav-button-view-mode></vda-nav-button-view-mode>
     <div class="vr"></div>
     <span class="ms-3">Daniel Orjuela</span>
     <span class=" mx-3 bi bi-layout-wtf"></span>
@@ -14,6 +14,7 @@
 
 <script setup>
 import vdaBreadCum from '@/layout/vdaDashboard/vdaBreadCum.vue'
+import vdaNavButtonViewMode from '@/layout/vdaDashboard/vdaNavButtonViewMode.vue'
 </script>
 
 <style lang="scss" scoped>

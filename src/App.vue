@@ -4,31 +4,14 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
-import { useVdaDashboardStore } from '@/stores/vdaDashboardStore'
-import { mapStores, mapState, mapActions } from 'pinia'
-import { ThemeModeMonitor} from '@/utils/ThemeModeMonitor'
-export default defineComponent({
-  name: "VueDebutAdmin",
-  mounted() {
-    this.setThemeBasedOnSystemPreference();
-  },
-  computed: {
-    ...mapStores(useVdaDashboardStore),
-    ...mapState(useVdaDashboardStore, ['vdaThemeMode']),
-  },
-  methods: {
-    setThemeBasedOnSystemPreference() {
-      if (this.vdaThemeMode === 'auto'){
-        let osMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.setAttribute('data-bs-theme', osMode?'dark':'ligth');
-        ThemeModeMonitor.MountMonitor();
-      }else{
-        document.documentElement.setAttribute('data-bs-theme', this.vdaThemeMode);
-        ThemeModeMonitor.RemoveMonitor();
-      }
-    }
-  }
-})
+<script setup>
+  import { ref, onMounted } from 'vue';
+  import { useVdaDashboardStore } from '@/stores/vdaDashboardStore'
+  import { ThemeModeMonitor} from '@/utils/ThemeModeMonitor'
+  import { ThemeModeComposable } from '@/utils/ThemeModeComposable.ts'
+  const {setThemeBasedOnSystemPreference, vdaThemeMode} = ThemeModeComposable();
+  
+  onMounted(() => {
+    setThemeBasedOnSystemPreference();
+  })
 </script>

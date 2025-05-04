@@ -7,7 +7,8 @@ export const useVdaDashboardStore = defineStore('vdaDashboardStore', {
     return {
       vdaSidebarOpened : lcSidebarOpened || false, 
       vdaThemeMode : lcBsTheme,
-      vdaToken: localStorage.getItem('vdaToken')
+      vdaToken: localStorage.getItem('vdaToken'),
+      vdaLoad: false
     }
   },
   actions: {
@@ -21,7 +22,10 @@ export const useVdaDashboardStore = defineStore('vdaDashboardStore', {
     },
     SetVdaToken(token:string) {
       this.vdaToken = token
-      localStorage.setItem('vdaSidebarOpened',token) 
+      localStorage.setItem('vdaToken',token) 
     },
+    SetVdaLoad(state:boolean){
+      this.vdaLoad = state
+    }
   }
 });
