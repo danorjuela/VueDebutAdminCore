@@ -20,12 +20,12 @@ import vdaNavButtonViewMode from '@/layout/vdaDashboard/vdaNavButtonViewMode.vue
 <style lang="scss" scoped>
   @media (prefers-color-scheme: light) {
     nav {
-      border-bottom:  var(--bs-border-width) solid var(--bs-gray-400);
+      border-bottom:  var(--bs-border-width) solid var(--bs-border-color);
     }
   }
   @media (prefers-color-scheme: dark) {
     nav {
-      border-bottom: var(--bs-border-width) solid var(--bs-gray-dark);
+      border-bottom: var(--bs-border-width) solid var(--bs-border-color);
     }
   }
 </style>
