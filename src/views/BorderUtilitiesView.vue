@@ -1,7 +1,6 @@
 <template>
   <div class="container-fluid">
     <!-- Page Heading -->
-    <h1 class="h3 mb-1 text-gray-800">Border Utilities</h1>
     <p class="mb-4">
       Bootstrap's default utility classes can be found on the official
       <a href="https://getbootstrap.com/docs">Bootstrap Documentation</a> page.
@@ -37,9 +36,6 @@
           <div class="card-body">.border-left-danger</div>
         </div>
 
-        <div class="card mb-4 py-3 border-left-dark">
-          <div class="card-body">.border-left-dark</div>
-        </div>
       </div>
 
       <!-- Border Bottom Utilities -->
@@ -68,9 +64,6 @@
           <div class="card-body">.border-bottom-danger</div>
         </div>
 
-        <div class="card mb-4 py-3 border-bottom-dark">
-          <div class="card-body">.border-bottom-dark</div>
-        </div>
       </div>
     </div>
   </div>

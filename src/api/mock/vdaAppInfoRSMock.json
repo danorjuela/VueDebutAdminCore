@@ -43,11 +43,14 @@
       "", "", ""
     ],
     "sidebar":[
-      {"name":"dashboard", "to":"/" , "icon":"bi-speedometer2", "color":"primary"},
+      {"name":"dashboard", "to":"/home" , "icon":"bi-speedometer2", "color":"primary"},
       {"name":"components", "to":"/components", "icon":"bi-window-split", "color":"danger",
       "childrens":[
          {"name":"buttons","to":"/buttons","icon":"bi-menu-button-wide-fill", "color":"danger"},
-         {"name":"cards","to":"/cards","icon":"bi-card-list", "color":"danger"}
+         {"name":"cards","to":"/cards","icon":"bi-card-list", "color":"danger"},
+         {"name":"table","to":"/tables","icon":"bi-table", "color":"danger"},
+         {"name":"modals","to":"/modals","icon":"bi-chat-left-text", "color":"danger"},
+         {"name":"wizards","to":"/wizards","icon":"bi-magic", "color":"danger"}
       ]},
       {"name":"utils", "to":"/utils","icon":"bi-tools", "color":"warning",
       "childrens":[

@@ -9,6 +9,7 @@ import ButtomsView from '@/views/ButtomsView.vue'
 import CardsView from '@/views/CardsView.vue'
 import ColorUtilitiesView from '@/views/ColorUtilitiesView.vue'
 import OtherUtilitiesView from '@/views/OtherUtilitiesView.vue'
+import TablesView from '@/views/TablesView.vue'
 
 
 // Vda pages
@@ -25,6 +26,7 @@ const routes = [
       {path: '/config', component: VdaConfigPage},
       {path: '/components/buttons', component: ButtomsView},
       {path: '/components/cards', component: CardsView},
+      {path: '/components/tables', component: TablesView},
       {path: '/utils/colors', component: ColorUtilitiesView},
       {path: '/utils/borders', component: BorderUtilitiesView},
       {path: '/utils/animations', component: AnimationUtilitiesView},

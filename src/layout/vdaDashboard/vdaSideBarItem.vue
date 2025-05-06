@@ -17,7 +17,8 @@
       <i class="bi bi-arrow-right-short d-none-collapse"></i>
       <div class="dropdown-menu">
         <h6 class="dropdown-header text-capitalize">{{ text }}</h6>
-        <router-link   @click.prevent="navigate(item.to)" v-for="(item, key) in childrens" :key="key" class="dropdown-item text-capitalize" :to="to + item.to"  >{{item.name}} </router-link
+        <router-link  @click.prevent="navigate(item.to)" v-for="(item, key) in childrens" :key="key" class="dropdown-item text-capitalize" :to="to + item.to">
+          <i :class="['bi', 'me-2', item.icon]"/> {{item.name}} </router-link
         >
       </div>
     </div>

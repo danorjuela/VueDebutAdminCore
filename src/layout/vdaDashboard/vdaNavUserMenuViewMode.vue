@@ -1,8 +1,8 @@
 <template>
   <div class="row">
     <div @click="changeVdaThemeMode('auto')" :class="{'py-1 col-4 menu-item':true,'active': vdaThemeMode =='auto' }">
-      <i class="bi bi-cpu"></i>
-      <span>Sistema</span>
+      <i class="bi bi-circle-half"></i>
+      <span>Auto</span>
     </div>
     <div @click="changeVdaThemeMode('ligth')"  :class="{'py-1 col-4 menu-item':true,'active': vdaThemeMode =='ligth' }">
       <i class="bi bi-brightness-high-fill"></i>
