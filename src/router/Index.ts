@@ -1,8 +1,19 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createWebHashHistory, createRouter } from 'vue-router'
 // Layout
 import vdaDashboard from '@/layout/vdaDashboard.vue'
-// Views
+// Views - examples
 import HomeView from '@/views/HomeView.vue'
+import AnimationUtilitiesView from '@/views/AnimationUtilitiesView.vue'
+import BorderUtilitiesView from '@/views/BorderUtilitiesView.vue'
+import ButtomsView from '@/views/ButtomsView.vue'
+import CardsView from '@/views/CardsView.vue'
+import ColorUtilitiesView from '@/views/ColorUtilitiesView.vue'
+import OtherUtilitiesView from '@/views/OtherUtilitiesView.vue'
+
+
+// Vda pages
+import VdaConfigPage from '@/vdaPages/VdaConfigPage.vue'
+
 
 const routes = [
   {
@@ -10,13 +21,20 @@ const routes = [
     component: vdaDashboard,
     redirect : '/home' ,
     children: [
-      {path: '/home', component: HomeView}
+      {path: '/home', component: HomeView},
+      {path: '/config', component: VdaConfigPage},
+      {path: '/components/buttons', component: ButtomsView},
+      {path: '/components/cards', component: CardsView},
+      {path: '/utils/colors', component: ColorUtilitiesView},
+      {path: '/utils/borders', component: BorderUtilitiesView},
+      {path: '/utils/animations', component: AnimationUtilitiesView},
+      {path: '/utils/other', component: OtherUtilitiesView},
     ]
   },
 ]
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHashHistory(),
   routes,
 })
 

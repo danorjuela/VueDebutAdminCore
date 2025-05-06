@@ -18,12 +18,15 @@
 import vdaSidebar from '@/layout/vdaDashboard/vdaSidebar.vue'
 import vdaNav from '@/layout/vdaDashboard/vdaNav.vue'
 import vdaFooter from '@/layout/vdaDashboard/vdaFooter.vue'
+
+
 </script>
 
 <style scoped>
 #admin-layout {
   min-height: 100vh;
 }
+
 
 .content {
   height: 100vh;
@@ -45,5 +48,20 @@ import vdaFooter from '@/layout/vdaDashboard/vdaFooter.vue'
   .content {
     margin-left: 0;
   }
+  
 }
+@media (min-width: 768px) {
+
+  .content.flex-grow-1 {
+  margin-left: 250px; 
+  transition: margin-left 0.3s;
+  }
+
+/* Cuando el sidebar está colapsado */
+.bar.colapse ~ .content.flex-grow-1 {
+  margin-left: 72px; /* Igual al ancho colapsado */
+}
+}
+
+
 </style>

@@ -43,8 +43,19 @@
       "", "", ""
     ],
     "sidebar":[
-      {"name":"dashboard", "icon":"", "color":""},
-      {"name":"campaign", "icon":"", "color":""}
+      {"name":"dashboard", "to":"/" , "icon":"bi-speedometer2", "color":"primary"},
+      {"name":"components", "to":"/components", "icon":"bi-window-split", "color":"danger",
+      "childrens":[
+         {"name":"buttons","to":"/buttons","icon":"bi-menu-button-wide-fill", "color":"danger"},
+         {"name":"cards","to":"/cards","icon":"bi-card-list", "color":"danger"}
+      ]},
+      {"name":"utils", "to":"/utils","icon":"bi-tools", "color":"warning",
+      "childrens":[
+         {"name":"colors","to":"/colors","icon":"bi-window-split", "color":"warning"},
+         {"name":"borders","to":"/borders","icon":"bi-hurricane", "color":"warning"},
+         {"name":"animations","to":"/animations","icon":"bi-images", "color":"warning"},
+         {"name":"other","to":"/other","icon":"bi-circle-square", "color":"warning"}
+      ]}
     ],
     "sidebarAdmin": {"name":"dashboard", "icon":"", "color":""}
   }

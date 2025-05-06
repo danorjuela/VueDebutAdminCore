@@ -1,20 +1,36 @@
 <template>
   <nav class="navbar topbar mb-2 static-top .navbar-expand-md">
-    <span class="navbar-toggler-icon mx-3"></span>
+    <span @click="toggleSidebar" class="navbar-toggler-icon mx-3"></span>
 
     <a class="navbar-brand mx-auto" href="#">DashBoard</a>
 
-    <vda-nav-button-view-mode></vda-nav-button-view-mode>
+    <vdaNavNotificationMenu></vdaNavNotificationMenu>
     <div class="vr"></div>
-    <span class="ms-3">Daniel Orjuela</span>
-    <span class=" mx-3 bi bi-layout-wtf"></span>
+    <span class="ms-3 d-none d-md-block">Daniel Orjuela</span>
+    <vda-nav-user-menu/>
 
   </nav>
 </template>
 
 <script setup>
 import vdaBreadCum from '@/layout/vdaDashboard/vdaBreadCum.vue'
+import vdaNavUserMenu from '@/layout/vdaDashboard/vdaNavUserMenu.vue'
+import vdaNavNotificationMenu from '@/layout/vdaDashboard/vdaNavNotificationMenu.vue'
+
+
+
 import vdaNavButtonViewMode from '@/layout/vdaDashboard/vdaNavButtonViewMode.vue'
+import { useVdaDashboardStore } from '@/stores/vdaDashboardStore'
+const vdaDashboardStore = useVdaDashboardStore();
+
+function toggleSidebar() {
+    if (window.innerWidth < 768) {
+      vdaDashboardStore.CloseSideBar();
+      vdaDashboardStore.OpenMobileSideBar();
+    } else {
+      vdaDashboardStore.ChangeSideBar()
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
